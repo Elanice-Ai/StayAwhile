@@ -9,7 +9,7 @@
 /* Begin PBXBuildFile section */
 		A5654056E92FB8863E11E4FB /* Pods_StayAwhile.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = D4B77D50472E65387B8CA9A2 /* Pods_StayAwhile.framework */; };
 		BFBD6E1521F8BCD100454534 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = BFBD6E1421F8BCD100454534 /* AppDelegate.swift */; };
-		BFBD6E1721F8BCD100454534 /* ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = BFBD6E1621F8BCD100454534 /* ViewController.swift */; };
+		BFBD6E1721F8BCD100454534 /* ChatViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = BFBD6E1621F8BCD100454534 /* ChatViewController.swift */; };
 		BFBD6E1A21F8BCD100454534 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = BFBD6E1821F8BCD100454534 /* Main.storyboard */; };
 		BFBD6E1C21F8BCD200454534 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = BFBD6E1B21F8BCD200454534 /* Assets.xcassets */; };
 		BFBD6E1F21F8BCD200454534 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = BFBD6E1D21F8BCD200454534 /* LaunchScreen.storyboard */; };
@@ -17,9 +17,10 @@
 
 /* Begin PBXFileReference section */
 		4ACE436EC1CC75EF4AB12164 /* Pods-StayAwhile.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-StayAwhile.release.xcconfig"; path = "Target Support Files/Pods-StayAwhile/Pods-StayAwhile.release.xcconfig"; sourceTree = "<group>"; };
+		BF754F3A21F8BFFD000BB110 /* Bridging-Header.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = "Bridging-Header.h"; sourceTree = "<group>"; };
 		BFBD6E1121F8BCD100454534 /* StayAwhile.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = StayAwhile.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		BFBD6E1421F8BCD100454534 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
-		BFBD6E1621F8BCD100454534 /* ViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ViewController.swift; sourceTree = "<group>"; };
+		BFBD6E1621F8BCD100454534 /* ChatViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ChatViewController.swift; sourceTree = "<group>"; };
 		BFBD6E1921F8BCD100454534 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/Main.storyboard; sourceTree = "<group>"; };
 		BFBD6E1B21F8BCD200454534 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		BFBD6E1E21F8BCD200454534 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
@@ -51,6 +52,7 @@
 		BFBD6E0821F8BCD100454534 = {
 			isa = PBXGroup;
 			children = (
+				BF754F3A21F8BFFD000BB110 /* Bridging-Header.h */,
 				BFBD6E1321F8BCD100454534 /* StayAwhile */,
 				BFBD6E1221F8BCD100454534 /* Products */,
 				E083966AE623572949945CBA /* Pods */,
@@ -70,7 +72,7 @@
 			isa = PBXGroup;
 			children = (
 				BFBD6E1421F8BCD100454534 /* AppDelegate.swift */,
-				BFBD6E1621F8BCD100454534 /* ViewController.swift */,
+				BFBD6E1621F8BCD100454534 /* ChatViewController.swift */,
 				BFBD6E1821F8BCD100454534 /* Main.storyboard */,
 				BFBD6E1B21F8BCD200454534 /* Assets.xcassets */,
 				BFBD6E1D21F8BCD200454534 /* LaunchScreen.storyboard */,
@@ -85,7 +87,6 @@
 				DF064487998D693A31BCD632 /* Pods-StayAwhile.debug.xcconfig */,
 				4ACE436EC1CC75EF4AB12164 /* Pods-StayAwhile.release.xcconfig */,
 			);
-			name = Pods;
 			path = Pods;
 			sourceTree = "<group>";
 		};
@@ -221,7 +222,7 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				BFBD6E1721F8BCD100454534 /* ViewController.swift in Sources */,
+				BFBD6E1721F8BCD100454534 /* ChatViewController.swift in Sources */,
 				BFBD6E1521F8BCD100454534 /* AppDelegate.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -379,6 +380,7 @@
 				);
 				PRODUCT_BUNDLE_IDENTIFIER = "Elanice-Ai.StayAwhile";
 				PRODUCT_NAME = "$(TARGET_NAME)";
+				"SWIFT_OBJC_BRIDGING_HEADER[arch=*]" = "Bridging-Header.h";
 				SWIFT_VERSION = 4.2;
 				TARGETED_DEVICE_FAMILY = 1;
 			};
@@ -399,6 +401,7 @@
 				);
 				PRODUCT_BUNDLE_IDENTIFIER = "Elanice-Ai.StayAwhile";
 				PRODUCT_NAME = "$(TARGET_NAME)";
+				"SWIFT_OBJC_BRIDGING_HEADER[arch=*]" = "Bridging-Header.h";
 				SWIFT_VERSION = 4.2;
 				TARGETED_DEVICE_FAMILY = 1;
 			};
