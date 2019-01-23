@@ -1,0 +1,6 @@
+framework module Pods_StayAwhile {
+  umbrella header "Pods-StayAwhile-umbrella.h"
+
+  export *
+  module * { export * }
+}
