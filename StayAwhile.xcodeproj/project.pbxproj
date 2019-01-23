@@ -8,6 +8,8 @@
 
 /* Begin PBXBuildFile section */
 		A5654056E92FB8863E11E4FB /* Pods_StayAwhile.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = D4B77D50472E65387B8CA9A2 /* Pods_StayAwhile.framework */; };
+		BF754F3C21F8C264000BB110 /* GoogleService-Info.plist in Resources */ = {isa = PBXBuildFile; fileRef = BF754F3B21F8C264000BB110 /* GoogleService-Info.plist */; };
+		BF754F3E21F8C30D000BB110 /* Constants.swift in Sources */ = {isa = PBXBuildFile; fileRef = BF754F3D21F8C30D000BB110 /* Constants.swift */; };
 		BFBD6E1521F8BCD100454534 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = BFBD6E1421F8BCD100454534 /* AppDelegate.swift */; };
 		BFBD6E1721F8BCD100454534 /* ChatViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = BFBD6E1621F8BCD100454534 /* ChatViewController.swift */; };
 		BFBD6E1A21F8BCD100454534 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = BFBD6E1821F8BCD100454534 /* Main.storyboard */; };
@@ -18,6 +20,8 @@
 /* Begin PBXFileReference section */
 		4ACE436EC1CC75EF4AB12164 /* Pods-StayAwhile.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-StayAwhile.release.xcconfig"; path = "Target Support Files/Pods-StayAwhile/Pods-StayAwhile.release.xcconfig"; sourceTree = "<group>"; };
 		BF754F3A21F8BFFD000BB110 /* Bridging-Header.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = "Bridging-Header.h"; sourceTree = "<group>"; };
+		BF754F3B21F8C264000BB110 /* GoogleService-Info.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; path = "GoogleService-Info.plist"; sourceTree = "<group>"; };
+		BF754F3D21F8C30D000BB110 /* Constants.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Constants.swift; sourceTree = "<group>"; };
 		BFBD6E1121F8BCD100454534 /* StayAwhile.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = StayAwhile.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		BFBD6E1421F8BCD100454534 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		BFBD6E1621F8BCD100454534 /* ChatViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ChatViewController.swift; sourceTree = "<group>"; };
@@ -77,6 +81,8 @@
 				BFBD6E1B21F8BCD200454534 /* Assets.xcassets */,
 				BFBD6E1D21F8BCD200454534 /* LaunchScreen.storyboard */,
 				BFBD6E2021F8BCD200454534 /* Info.plist */,
+				BF754F3B21F8C264000BB110 /* GoogleService-Info.plist */,
+				BF754F3D21F8C30D000BB110 /* Constants.swift */,
 			);
 			path = StayAwhile;
 			sourceTree = "<group>";
@@ -151,6 +157,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				BFBD6E1F21F8BCD200454534 /* LaunchScreen.storyboard in Resources */,
+				BF754F3C21F8C264000BB110 /* GoogleService-Info.plist in Resources */,
 				BFBD6E1C21F8BCD200454534 /* Assets.xcassets in Resources */,
 				BFBD6E1A21F8BCD100454534 /* Main.storyboard in Resources */,
 			);
@@ -224,6 +231,7 @@
 			files = (
 				BFBD6E1721F8BCD100454534 /* ChatViewController.swift in Sources */,
 				BFBD6E1521F8BCD100454534 /* AppDelegate.swift in Sources */,
+				BF754F3E21F8C30D000BB110 /* Constants.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
