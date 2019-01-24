@@ -54,6 +54,14 @@ class ChatScreen: UIViewController, UITableViewDelegate, UITableViewDataSource {
   func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
     let cell = tableView.dequeueReusableCell(withIdentifier: "chatCell", for: indexPath)
     
+    magic(messages[indexPath.row].name)
+    
+    if messages[indexPath.row].name == "Deep Thought" {
+      cell.backgroundColor = #colorLiteral(red: 0.4666666687, green: 0.7647058964, blue: 0.2666666806, alpha: 0.5)
+    } else {
+      cell.backgroundColor = #colorLiteral(red: 0.1764705926, green: 0.4980392158, blue: 0.7568627596, alpha: 0.5)
+    }
+    
     cell.textLabel?.text = messages[indexPath.row].text
     cell.detailTextLabel?.text = messages[indexPath.row].name
 
