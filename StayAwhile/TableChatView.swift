@@ -3,7 +3,7 @@ import Magic
 
 class TableChatView: UIViewController, UITableViewDelegate, UITableViewDataSource {
 
-  var messages: [[String: String]] = []
+  var messages: [Int] = [1,2,3,4,5,6,7,8,9,10]
   
   @IBOutlet var tableView: UITableView!
   
@@ -15,6 +15,7 @@ class TableChatView: UIViewController, UITableViewDelegate, UITableViewDataSourc
     tableView.delegate    = self
     tableView.dataSource  = self
     
+    self.title = "CHATS"
   }
   
   func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
@@ -22,7 +23,7 @@ class TableChatView: UIViewController, UITableViewDelegate, UITableViewDataSourc
   }
   
   func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
-    let cell = tableView.dequeueReusableCell(withIdentifier: "chatMessage", for: indexPath)
+    let cell = tableView.dequeueReusableCell(withIdentifier: "chatCell", for: indexPath)
 
     cell.textLabel?.text = "Hello"
     cell.detailTextLabel?.text = "by Riley"

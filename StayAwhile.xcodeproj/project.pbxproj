@@ -8,7 +8,6 @@
 
 /* Begin PBXBuildFile section */
 		A5654056E92FB8863E11E4FB /* Pods_StayAwhile.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = D4B77D50472E65387B8CA9A2 /* Pods_StayAwhile.framework */; };
-		BF754F3C21F8C264000BB110 /* GoogleService-Info.plist in Resources */ = {isa = PBXBuildFile; fileRef = BF754F3B21F8C264000BB110 /* GoogleService-Info.plist */; };
 		BF754F3E21F8C30D000BB110 /* Constants.swift in Sources */ = {isa = PBXBuildFile; fileRef = BF754F3D21F8C30D000BB110 /* Constants.swift */; };
 		BFBD6E1521F8BCD100454534 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = BFBD6E1421F8BCD100454534 /* AppDelegate.swift */; };
 		BFBD6E1721F8BCD100454534 /* ChatViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = BFBD6E1621F8BCD100454534 /* ChatViewController.swift */; };
@@ -17,12 +16,12 @@
 		BFBD6E1F21F8BCD200454534 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = BFBD6E1D21F8BCD200454534 /* LaunchScreen.storyboard */; };
 		BFFB908B21F9C844005D97D6 /* CollectionChatView.swift in Sources */ = {isa = PBXBuildFile; fileRef = BFFB908A21F9C844005D97D6 /* CollectionChatView.swift */; };
 		BFFB908D21F9CF37005D97D6 /* TableChatView.swift in Sources */ = {isa = PBXBuildFile; fileRef = BFFB908C21F9CF37005D97D6 /* TableChatView.swift */; };
+		FA0D36EC21F9E3BD0024F524 /* GoogleService-Info.plist in Resources */ = {isa = PBXBuildFile; fileRef = FA0D36EB21F9E3BD0024F524 /* GoogleService-Info.plist */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
 		4ACE436EC1CC75EF4AB12164 /* Pods-StayAwhile.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-StayAwhile.release.xcconfig"; path = "Target Support Files/Pods-StayAwhile/Pods-StayAwhile.release.xcconfig"; sourceTree = "<group>"; };
 		BF754F3A21F8BFFD000BB110 /* Bridging-Header.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = "Bridging-Header.h"; sourceTree = "<group>"; };
-		BF754F3B21F8C264000BB110 /* GoogleService-Info.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; path = "GoogleService-Info.plist"; sourceTree = "<group>"; };
 		BF754F3D21F8C30D000BB110 /* Constants.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Constants.swift; sourceTree = "<group>"; };
 		BFBD6E1121F8BCD100454534 /* StayAwhile.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = StayAwhile.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		BFBD6E1421F8BCD100454534 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
@@ -35,6 +34,7 @@
 		BFFB908C21F9CF37005D97D6 /* TableChatView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TableChatView.swift; sourceTree = "<group>"; };
 		D4B77D50472E65387B8CA9A2 /* Pods_StayAwhile.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_StayAwhile.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		DF064487998D693A31BCD632 /* Pods-StayAwhile.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-StayAwhile.debug.xcconfig"; path = "Target Support Files/Pods-StayAwhile/Pods-StayAwhile.debug.xcconfig"; sourceTree = "<group>"; };
+		FA0D36EB21F9E3BD0024F524 /* GoogleService-Info.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; path = "GoogleService-Info.plist"; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -79,14 +79,12 @@
 		BFBD6E1321F8BCD100454534 /* StayAwhile */ = {
 			isa = PBXGroup;
 			children = (
+				FA0D36F021F9E8F70024F524 /* Utils */,
+				FA0D36EF21F9E8E70024F524 /* Model */,
+				FA0D36EE21F9E8DD0024F524 /* View */,
+				FA0D36ED21F9E8D40024F524 /* Controller */,
 				BFBD6E1421F8BCD100454534 /* AppDelegate.swift */,
 				BFBD6E1621F8BCD100454534 /* ChatViewController.swift */,
-				BFBD6E1821F8BCD100454534 /* Main.storyboard */,
-				BFBD6E1B21F8BCD200454534 /* Assets.xcassets */,
-				BFBD6E1D21F8BCD200454534 /* LaunchScreen.storyboard */,
-				BFBD6E2021F8BCD200454534 /* Info.plist */,
-				BF754F3B21F8C264000BB110 /* GoogleService-Info.plist */,
-				BF754F3D21F8C30D000BB110 /* Constants.swift */,
 				BFFB908A21F9C844005D97D6 /* CollectionChatView.swift */,
 				BFFB908C21F9CF37005D97D6 /* TableChatView.swift */,
 			);
@@ -100,6 +98,40 @@
 				4ACE436EC1CC75EF4AB12164 /* Pods-StayAwhile.release.xcconfig */,
 			);
 			path = Pods;
+			sourceTree = "<group>";
+		};
+		FA0D36ED21F9E8D40024F524 /* Controller */ = {
+			isa = PBXGroup;
+			children = (
+			);
+			path = Controller;
+			sourceTree = "<group>";
+		};
+		FA0D36EE21F9E8DD0024F524 /* View */ = {
+			isa = PBXGroup;
+			children = (
+				BFBD6E1821F8BCD100454534 /* Main.storyboard */,
+				BFBD6E1D21F8BCD200454534 /* LaunchScreen.storyboard */,
+			);
+			path = View;
+			sourceTree = "<group>";
+		};
+		FA0D36EF21F9E8E70024F524 /* Model */ = {
+			isa = PBXGroup;
+			children = (
+				BF754F3D21F8C30D000BB110 /* Constants.swift */,
+			);
+			path = Model;
+			sourceTree = "<group>";
+		};
+		FA0D36F021F9E8F70024F524 /* Utils */ = {
+			isa = PBXGroup;
+			children = (
+				BFBD6E1B21F8BCD200454534 /* Assets.xcassets */,
+				BFBD6E2021F8BCD200454534 /* Info.plist */,
+				FA0D36EB21F9E3BD0024F524 /* GoogleService-Info.plist */,
+			);
+			path = Utils;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -163,9 +195,9 @@
 			buildActionMask = 2147483647;
 			files = (
 				BFBD6E1F21F8BCD200454534 /* LaunchScreen.storyboard in Resources */,
-				BF754F3C21F8C264000BB110 /* GoogleService-Info.plist in Resources */,
 				BFBD6E1C21F8BCD200454534 /* Assets.xcassets in Resources */,
 				BFBD6E1A21F8BCD100454534 /* Main.storyboard in Resources */,
+				FA0D36EC21F9E3BD0024F524 /* GoogleService-Info.plist in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -386,9 +418,9 @@
 			baseConfigurationReference = DF064487998D693A31BCD632 /* Pods-StayAwhile.debug.xcconfig */;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
-				CODE_SIGN_STYLE = Automatic;
-				DEVELOPMENT_TEAM = 683CXDNH79;
-				INFOPLIST_FILE = StayAwhile/Info.plist;
+				CODE_SIGN_STYLE = Manual;
+				DEVELOPMENT_TEAM = "";
+				INFOPLIST_FILE = "$(SRCROOT)/StayAwhile/Utils/Info.plist";
 				IPHONEOS_DEPLOYMENT_TARGET = 12.0;
 				LD_RUNPATH_SEARCH_PATHS = (
 					"$(inherited)",
@@ -396,6 +428,7 @@
 				);
 				PRODUCT_BUNDLE_IDENTIFIER = "Elanice-Ai.StayAwhile";
 				PRODUCT_NAME = "$(TARGET_NAME)";
+				PROVISIONING_PROFILE_SPECIFIER = "";
 				"SWIFT_OBJC_BRIDGING_HEADER[arch=*]" = "Bridging-Header.h";
 				SWIFT_VERSION = 4.2;
 				TARGETED_DEVICE_FAMILY = 1;
@@ -407,9 +440,9 @@
 			baseConfigurationReference = 4ACE436EC1CC75EF4AB12164 /* Pods-StayAwhile.release.xcconfig */;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
-				CODE_SIGN_STYLE = Automatic;
-				DEVELOPMENT_TEAM = 683CXDNH79;
-				INFOPLIST_FILE = StayAwhile/Info.plist;
+				CODE_SIGN_STYLE = Manual;
+				DEVELOPMENT_TEAM = "";
+				INFOPLIST_FILE = "$(SRCROOT)/StayAwhile/Utils/Info.plist";
 				IPHONEOS_DEPLOYMENT_TARGET = 12.0;
 				LD_RUNPATH_SEARCH_PATHS = (
 					"$(inherited)",
@@ -417,6 +450,7 @@
 				);
 				PRODUCT_BUNDLE_IDENTIFIER = "Elanice-Ai.StayAwhile";
 				PRODUCT_NAME = "$(TARGET_NAME)";
+				PROVISIONING_PROFILE_SPECIFIER = "";
 				"SWIFT_OBJC_BRIDGING_HEADER[arch=*]" = "Bridging-Header.h";
 				SWIFT_VERSION = 4.2;
 				TARGETED_DEVICE_FAMILY = 1;
