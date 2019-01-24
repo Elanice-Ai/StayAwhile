@@ -1,7 +1,7 @@
 import UIKit
 import Magic
 
-class ChatScreen: UIViewController {
+class ChatScreen: UIViewController, UITableViewDelegate, UITableViewDataSource {
   
   var messages: [Message] = [Message]()
   
@@ -12,12 +12,12 @@ class ChatScreen: UIViewController {
   override func viewDidLoad() {
     super.viewDidLoad()
     
-//    tableView.delegate    = self
-//    tableView.dataSource  = self
+    tableView.delegate    = self
+    tableView.dataSource  = self
 
     let query = Constants.refs.databaseChats.queryLimited(toLast: 10)
     
-    _ = query.observe(.childAdded, with: { snapshot in
+    _ = query.observe(.childAdded, with: { [weak self] snapshot in
       
       if let data = snapshot.value as? [String: String],
         let text  = data["text"],
@@ -27,9 +27,10 @@ class ChatScreen: UIViewController {
         
         let message = Message(recievedText: text, recievedName: name, recievedSenderId: id)
         
-        self.messages.append(message)
+        self!.messages.append(message)
       }
     })
+    
     
     magic(messages)
     
