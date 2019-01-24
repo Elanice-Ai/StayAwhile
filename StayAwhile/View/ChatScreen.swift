@@ -4,10 +4,9 @@ import Magic
 class ChatScreen: UIViewController, UITableViewDelegate, UITableViewDataSource {
   
   /// Список всех сообщений
-  var messages: [Message] = [Message]()
+  var messages: [Message] = []
   
   @IBOutlet var tableView: UITableView!
-  
   @IBOutlet var textInput: UITextField!
   
   override func viewDidLoad() {
@@ -55,12 +54,9 @@ class ChatScreen: UIViewController, UITableViewDelegate, UITableViewDataSource {
   func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
     let cell = tableView.dequeueReusableCell(withIdentifier: "chatCell", for: indexPath)
     
-//    cell.textLabel?.text = messages[indexPath]
-    cell.detailTextLabel?.text = messages.first?.name
+    cell.textLabel?.text = messages[indexPath.row].text
+    cell.detailTextLabel?.text = messages[indexPath.row].name
 
     return cell
   }
-  
-
-  
 }
