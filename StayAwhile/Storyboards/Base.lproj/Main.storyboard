@@ -9,10 +9,10 @@
         <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
     </dependencies>
     <scenes>
-        <!--Table Chat View-->
+        <!--Chat Screen-->
         <scene sceneID="DT6-oC-o3p">
             <objects>
-                <viewController id="FO9-IN-HXH" customClass="TableChatView" customModule="StayAwhile" customModuleProvider="target" sceneMemberID="viewController">
+                <viewController id="FO9-IN-HXH" customClass="ChatScreen" customModule="StayAwhile" customModuleProvider="target" sceneMemberID="viewController">
                     <view key="view" contentMode="scaleToFill" id="hRN-n2-Ffn">
                         <rect key="frame" x="0.0" y="0.0" width="320" height="568"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
