@@ -15,6 +15,8 @@
 		BFBD6E1A21F8BCD100454534 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = BFBD6E1821F8BCD100454534 /* Main.storyboard */; };
 		BFBD6E1C21F8BCD200454534 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = BFBD6E1B21F8BCD200454534 /* Assets.xcassets */; };
 		BFBD6E1F21F8BCD200454534 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = BFBD6E1D21F8BCD200454534 /* LaunchScreen.storyboard */; };
+		BFFB908921F9C600005D97D6 /* TableChatView.swift in Sources */ = {isa = PBXBuildFile; fileRef = BFFB908821F9C600005D97D6 /* TableChatView.swift */; };
+		BFFB908B21F9C844005D97D6 /* CollectionChatView.swift in Sources */ = {isa = PBXBuildFile; fileRef = BFFB908A21F9C844005D97D6 /* CollectionChatView.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -29,6 +31,8 @@
 		BFBD6E1B21F8BCD200454534 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		BFBD6E1E21F8BCD200454534 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
 		BFBD6E2021F8BCD200454534 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		BFFB908821F9C600005D97D6 /* TableChatView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TableChatView.swift; sourceTree = "<group>"; };
+		BFFB908A21F9C844005D97D6 /* CollectionChatView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CollectionChatView.swift; sourceTree = "<group>"; };
 		D4B77D50472E65387B8CA9A2 /* Pods_StayAwhile.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_StayAwhile.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		DF064487998D693A31BCD632 /* Pods-StayAwhile.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-StayAwhile.debug.xcconfig"; path = "Target Support Files/Pods-StayAwhile/Pods-StayAwhile.debug.xcconfig"; sourceTree = "<group>"; };
 /* End PBXFileReference section */
@@ -83,6 +87,8 @@
 				BFBD6E2021F8BCD200454534 /* Info.plist */,
 				BF754F3B21F8C264000BB110 /* GoogleService-Info.plist */,
 				BF754F3D21F8C30D000BB110 /* Constants.swift */,
+				BFFB908821F9C600005D97D6 /* TableChatView.swift */,
+				BFFB908A21F9C844005D97D6 /* CollectionChatView.swift */,
 			);
 			path = StayAwhile;
 			sourceTree = "<group>";
@@ -229,7 +235,9 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				BFFB908B21F9C844005D97D6 /* CollectionChatView.swift in Sources */,
 				BFBD6E1721F8BCD100454534 /* ChatViewController.swift in Sources */,
+				BFFB908921F9C600005D97D6 /* TableChatView.swift in Sources */,
 				BFBD6E1521F8BCD100454534 /* AppDelegate.swift in Sources */,
 				BF754F3E21F8C30D000BB110 /* Constants.swift in Sources */,
 			);

@@ -19,7 +19,7 @@ class ChatViewController: JSQMessagesViewController {
     
     let defaults = UserDefaults.standard
     
-    if  let id = defaults.string(forKey: "jsq_id"),
+    if let id = defaults.string(forKey: "jsq_id"),
       let name = defaults.string(forKey: "jsq_name")
     {
       senderId = id
@@ -49,7 +49,7 @@ class ChatViewController: JSQMessagesViewController {
     
     _ = query.observe(.childAdded, with: { [weak self] snapshot in
       
-      if  let data = snapshot.value as? [String: String],
+      if let data = snapshot.value as? [String: String],
         let id     = data["sender_id"],
         let name   = data["name"],
         let text   = data["text"],
@@ -72,12 +72,9 @@ class ChatViewController: JSQMessagesViewController {
     
     alert.addTextField { textField in
       
-      if let name = defaults.string(forKey: "jsq_name")
-      {
+      if let name = defaults.string(forKey: "jsq_name") {
         textField.text = name
-      }
-      else
-      {
+      } else {
         let names = ["Ford", "Arthur", "Zaphod", "Trillian", "Slartibartfast", "Humma Kavula", "Deep Thought"]
         textField.text = names[Int(arc4random_uniform(UInt32(names.count)))]
       }
