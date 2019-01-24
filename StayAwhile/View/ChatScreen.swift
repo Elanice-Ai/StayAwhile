@@ -3,6 +3,7 @@ import Magic
 
 class ChatScreen: UIViewController, UITableViewDelegate, UITableViewDataSource {
   
+  /// Список всех сообщений
   var messages: [Message] = [Message]()
   
   @IBOutlet var tableView: UITableView!
@@ -15,9 +16,23 @@ class ChatScreen: UIViewController, UITableViewDelegate, UITableViewDataSource {
     tableView.delegate    = self
     tableView.dataSource  = self
 
+    self.title = "Main chat"
+  }
+  
+  override func viewWillAppear(_ animated: Bool) {
+    list { (messages) in
+      self.messages = messages
+      self.tableView.reloadData()
+    }
+  }
+  
+  func list(onSuccess: @escaping ([Message]) -> Void) {
+    
+    var messages = [Message]()
+    
     let query = Constants.refs.databaseChats.queryLimited(toLast: 10)
     
-    _ = query.observe(.childAdded, with: { [weak self] snapshot in
+    _ = query.observe(.childAdded, with: { snapshot in
       
       if let data = snapshot.value as? [String: String],
         let text  = data["text"],
@@ -26,15 +41,11 @@ class ChatScreen: UIViewController, UITableViewDelegate, UITableViewDataSource {
         !text.isEmpty {
         
         let message = Message(recievedText: text, recievedName: name, recievedSenderId: id)
-        
-        self!.messages.append(message)
+        messages.append(message)
       }
+      
+      onSuccess(messages)
     })
-    
-    
-    magic(messages)
-    
-    self.title = "Main chat"
   }
   
   func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
@@ -43,10 +54,8 @@ class ChatScreen: UIViewController, UITableViewDelegate, UITableViewDataSource {
   
   func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
     let cell = tableView.dequeueReusableCell(withIdentifier: "chatCell", for: indexPath)
-
     
-    
-    cell.textLabel?.text = messages.first?.text
+//    cell.textLabel?.text = messages[indexPath]
     cell.detailTextLabel?.text = messages.first?.name
 
     return cell
