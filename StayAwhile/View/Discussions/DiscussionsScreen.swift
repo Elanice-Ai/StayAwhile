@@ -17,6 +17,10 @@ class DiscussionsScreen: UIViewController {
       return
     }
     
+    if discussions.isEmpty {
+      
+    }
+    
     self.navigationItem.hidesBackButton = true
     
     let logoutButton = UIBarButtonItem(title: "Logout", style: UIBarButtonItem.Style.done, target: self, action: #selector(DiscussionsScreen.logout(sender:)))
