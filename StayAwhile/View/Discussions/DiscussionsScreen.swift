@@ -16,23 +16,31 @@ class DiscussionsScreen: UIViewController {
     guard let _ = user else {
       return
     }
-
-    // Not working shit
     
-//    if discussions.isEmpty {
-//      // TODO: Wtf with this init method?!
-//      let manager = DiscussionInteractor(manager: DiscussionManager.self as! DiscussionManager).manager
-//
-//      let temporaryuid: String = String(arc4random_uniform(999999))
-//
-//      let discussion: Discussion = Discussion(uid: temporaryuid, title: "Sample string", lastMessage: "Hello?")
-//
-//      manager.add(discussion: discussion, onSuccess: {
-//        self.discussionsTable.reloadData()
-//      }) { (error) in
-//        magic(error)
-//      }
-//    }
+    let manager = DiscussionInteractor(manager: DiscussionFirebase()).manager
+    
+    var discussionsListFromFireBase: [Discussion] = [Discussion]()
+    
+    manager.list(onSuccess: { (discussion) in
+      discussionsListFromFireBase = discussion
+    }) { (error) in
+      magic(error)
+    }
+    
+    if discussionsListFromFireBase.isEmpty {
+      
+      let temporaryUid: String = String(arc4random_uniform(999999))
+
+      let discussion: Discussion = Discussion(uid: temporaryUid, title: "Johny", lastMessage: "Hello?")
+      
+      manager.add(discussion: discussion, onSuccess: {
+        self.discussionsTable.reloadData()
+      }) { (error) in
+        magic(error)
+      }
+    } else {
+      magic("That's fine")
+    }
     
     self.navigationItem.hidesBackButton = true
     
