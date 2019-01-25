@@ -1,6 +1,7 @@
 import Foundation
 import Firebase
 import FirebaseDatabase
+import Magic
 
 public class DiscussionFirebase: DiscussionManager {
   
@@ -21,13 +22,11 @@ public class DiscussionFirebase: DiscussionManager {
     }
   }
   
-  
   public func add(discussion: Discussion, onSuccess: @escaping () -> Void, onError: ErrorClosure?) {
     
     // TODO: Title is a user's name
 
     let child = Discussion.toDict(discussion: discussion)
-
 
     ref.child(child["uid"]!).updateChildValues(child) { (error, _) in
       if let err = error, let retError = onError {
@@ -36,7 +35,4 @@ public class DiscussionFirebase: DiscussionManager {
       onSuccess()
     }
   }
-  
-  
-
 }
