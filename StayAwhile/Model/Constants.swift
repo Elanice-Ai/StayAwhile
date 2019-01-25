@@ -3,7 +3,10 @@ import Firebase
 
 struct Constants {
   struct refs {
+    /// Корень базы данных в FireBase
     static let databaseRoot  = Database.database().reference()
-    static let databaseChats = databaseRoot.child("chats")
+    
+    /// Список чатов в FireBase
+    static let databaseDiscussions = databaseRoot.child("discussions")
   }
 }
