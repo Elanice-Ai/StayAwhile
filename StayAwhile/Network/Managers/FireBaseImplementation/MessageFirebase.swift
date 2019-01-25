@@ -20,5 +20,4 @@ public class MessageFirebase: MessageManager {
   public func add(message: Message, onSuccess: @escaping () -> Void, onError: ErrorClosure?) {
     
   }
-  
 }

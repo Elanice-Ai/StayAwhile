@@ -20,4 +20,23 @@ public class DiscussionFirebase: DiscussionManager {
       print(error)
     }
   }
+  
+  
+  public func add(discussion: Discussion, onSuccess: @escaping () -> Void, onError: ErrorClosure?) {
+    
+    // TODO: Title is a user's name
+
+    let child = Discussion.toDict(discussion: discussion)
+
+
+    ref.child(child["uid"]!).updateChildValues(child) { (error, _) in
+      if let err = error, let retError = onError {
+        retError(err)
+      }
+      onSuccess()
+    }
+  }
+  
+  
+
 }

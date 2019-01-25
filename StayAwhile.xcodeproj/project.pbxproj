@@ -27,7 +27,6 @@
 		BF7307E021FB2C3100440CEB /* MessageTypeEnum.swift in Sources */ = {isa = PBXBuildFile; fileRef = BF7307DF21FB2C3100440CEB /* MessageTypeEnum.swift */; };
 		BF754F3E21F8C30D000BB110 /* Constants.swift in Sources */ = {isa = PBXBuildFile; fileRef = BF754F3D21F8C30D000BB110 /* Constants.swift */; };
 		BFA9BA2721F9EF9600D7B8B2 /* UITextField+Extensions.swift in Sources */ = {isa = PBXBuildFile; fileRef = BFA9BA2621F9EF9600D7B8B2 /* UITextField+Extensions.swift */; };
-		BFA9BA2921F9F08000D7B8B2 /* GoogleService-Info.plist in Resources */ = {isa = PBXBuildFile; fileRef = BFA9BA2821F9F08000D7B8B2 /* GoogleService-Info.plist */; };
 		BFBD6E1521F8BCD100454534 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = BFBD6E1421F8BCD100454534 /* AppDelegate.swift */; };
 		BFBD6E1A21F8BCD100454534 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = BFBD6E1821F8BCD100454534 /* Main.storyboard */; };
 		BFBD6E1C21F8BCD200454534 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = BFBD6E1B21F8BCD200454534 /* Assets.xcassets */; };
@@ -37,6 +36,7 @@
 		BFC3B53221FB40A600DBBDA2 /* MessageManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = BFC3B53121FB40A600DBBDA2 /* MessageManager.swift */; };
 		BFC3B53421FB40C600DBBDA2 /* MessageFirebase.swift in Sources */ = {isa = PBXBuildFile; fileRef = BFC3B53321FB40C600DBBDA2 /* MessageFirebase.swift */; };
 		BFC3B53C21FB445F00DBBDA2 /* Message.swift in Sources */ = {isa = PBXBuildFile; fileRef = BFC3B53B21FB445F00DBBDA2 /* Message.swift */; };
+		BFC3B54821FB641700DBBDA2 /* GoogleService-Info.plist in Resources */ = {isa = PBXBuildFile; fileRef = BFC3B54721FB641700DBBDA2 /* GoogleService-Info.plist */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -60,7 +60,6 @@
 		BF7307DF21FB2C3100440CEB /* MessageTypeEnum.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MessageTypeEnum.swift; sourceTree = "<group>"; };
 		BF754F3D21F8C30D000BB110 /* Constants.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Constants.swift; sourceTree = "<group>"; };
 		BFA9BA2621F9EF9600D7B8B2 /* UITextField+Extensions.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "UITextField+Extensions.swift"; sourceTree = "<group>"; };
-		BFA9BA2821F9F08000D7B8B2 /* GoogleService-Info.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; name = "GoogleService-Info.plist"; path = "../../../Downloads/GoogleService-Info.plist"; sourceTree = "<group>"; };
 		BFBD6E1121F8BCD100454534 /* StayAwhile.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = StayAwhile.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		BFBD6E1421F8BCD100454534 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		BFBD6E1921F8BCD100454534 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/Main.storyboard; sourceTree = "<group>"; };
@@ -72,6 +71,7 @@
 		BFC3B53121FB40A600DBBDA2 /* MessageManager.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MessageManager.swift; sourceTree = "<group>"; };
 		BFC3B53321FB40C600DBBDA2 /* MessageFirebase.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MessageFirebase.swift; sourceTree = "<group>"; };
 		BFC3B53B21FB445F00DBBDA2 /* Message.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Message.swift; sourceTree = "<group>"; };
+		BFC3B54721FB641700DBBDA2 /* GoogleService-Info.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; name = "GoogleService-Info.plist"; path = "../../../Downloads/GoogleService-Info.plist"; sourceTree = "<group>"; };
 		D4B77D50472E65387B8CA9A2 /* Pods_StayAwhile.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_StayAwhile.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		DF064487998D693A31BCD632 /* Pods-StayAwhile.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-StayAwhile.debug.xcconfig"; path = "Target Support Files/Pods-StayAwhile/Pods-StayAwhile.debug.xcconfig"; sourceTree = "<group>"; };
 /* End PBXFileReference section */
@@ -207,7 +207,7 @@
 				FA0D36EE21F9E8DD0024F524 /* View */,
 				BF7307B521FB19E900440CEB /* Network */,
 				BFBD6E1421F8BCD100454534 /* AppDelegate.swift */,
-				BFA9BA2821F9F08000D7B8B2 /* GoogleService-Info.plist */,
+				BFC3B54721FB641700DBBDA2 /* GoogleService-Info.plist */,
 			);
 			path = StayAwhile;
 			sourceTree = "<group>";
@@ -325,7 +325,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				BFBD6E1F21F8BCD200454534 /* LaunchScreen.storyboard in Resources */,
-				BFA9BA2921F9F08000D7B8B2 /* GoogleService-Info.plist in Resources */,
+				BFC3B54821FB641700DBBDA2 /* GoogleService-Info.plist in Resources */,
 				BFBD6E1C21F8BCD200454534 /* Assets.xcassets in Resources */,
 				BFBD6E1A21F8BCD100454534 /* Main.storyboard in Resources */,
 			);

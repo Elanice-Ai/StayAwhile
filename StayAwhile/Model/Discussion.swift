@@ -21,4 +21,18 @@ public class Discussion {
   convenience init(){
     self.init(uid: "", title: "", lastMessage: "")
   }
+  
+  public class func toDict(discussion: Discussion) -> [String: String] {
+    
+    let dateString = Date.fromDateToString(date: Date(), format: "yyyy-MM-dd HH:mm:ss")
+    
+    var dict = [String: String]()
+    
+    dict["uid"]         = discussion.uid
+    dict["title"]       = discussion.title
+    dict["lastMessage"] = discussion.lastMessage
+    dict["dateString"]  = dateString
+    
+    return dict
+  }
 }
