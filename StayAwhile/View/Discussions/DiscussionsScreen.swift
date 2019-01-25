@@ -17,30 +17,28 @@ class DiscussionsScreen: UIViewController {
       return
     }
     
+    // MARK: Временная заглушка заполняющая список чатов
     let manager = DiscussionInteractor(manager: DiscussionFirebase()).manager
     
-    var discussionsListFromFireBase: [Discussion] = [Discussion]()
-    
     manager.list(onSuccess: { (discussion) in
-      discussionsListFromFireBase = discussion
+      if discussion.count == 0 {
+        
+        let temporaryUid: String = String(arc4random_uniform(999999))
+        
+        let discussion: Discussion = Discussion(uid: temporaryUid, title: "Johny", lastMessage: "Hello?")
+        
+        manager.add(discussion: discussion, onSuccess: {
+          self.discussionsTable.reloadData()
+        }) { (error) in
+          magic(error)
+        }
+      } else {
+        magic("That's fine")
+      }
     }) { (error) in
       magic(error)
     }
-    
-    if discussionsListFromFireBase.isEmpty {
-      
-      let temporaryUid: String = String(arc4random_uniform(999999))
-
-      let discussion: Discussion = Discussion(uid: temporaryUid, title: "Johny", lastMessage: "Hello?")
-      
-      manager.add(discussion: discussion, onSuccess: {
-        self.discussionsTable.reloadData()
-      }) { (error) in
-        magic(error)
-      }
-    } else {
-      magic("That's fine")
-    }
+    // Конец заглушки
     
     self.navigationItem.hidesBackButton = true
     
