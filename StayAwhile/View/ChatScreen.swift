@@ -1,70 +1,75 @@
 import UIKit
 import Magic
 
-class ChatScreen: UIViewController, UITableViewDelegate, UITableViewDataSource {
-  
-  /// Список всех сообщений
-  var messages: [Message] = []
-  
-  @IBOutlet var tableView: UITableView!
-  @IBOutlet var textInput: UITextField!
-  
-  override func viewDidLoad() {
-    super.viewDidLoad()
+class ChatScreen: UIViewController {
     
-    tableView.delegate    = self
-    tableView.dataSource  = self
-
-    self.title = "Main chat"
-  }
-  
-  override func viewWillAppear(_ animated: Bool) {
-    list { (messages) in
-      self.messages = messages
-      self.tableView.reloadData()
-    }
-  }
-  
-  func list(onSuccess: @escaping ([Message]) -> Void) {
+    // MARK: - Properties
     
-    var messages = [Message]()
+    @IBOutlet var tableView: UITableView!
+    @IBOutlet var textInput: UITextField!
     
-    let query = Constants.refs.databaseChats.queryLimited(toLast: 10)
+    // MARK: - Init
     
-    _ = query.observe(.childAdded, with: { snapshot in
-      
-      if let data = snapshot.value as? [String: String],
-        let text  = data["text"],
-        let name  = data["name"],
-        let id    = data["sender_id"],
-        !text.isEmpty {
+    override func viewDidLoad() {
+        super.viewDidLoad()
         
-        let message = Message(recievedText: text, recievedName: name, recievedSenderId: id)
-        messages.append(message)
-      }
-      
-      onSuccess(messages)
-    })
-  }
-  
-  func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
-    return messages.count
-  }
-  
-  func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
-    let cell = tableView.dequeueReusableCell(withIdentifier: "chatCell", for: indexPath)
-    
-    magic(messages[indexPath.row].name)
-    
-    if messages[indexPath.row].name == "Deep Thought" {
-      cell.backgroundColor = #colorLiteral(red: 0.4666666687, green: 0.7647058964, blue: 0.2666666806, alpha: 0.5)
-    } else {
-      cell.backgroundColor = #colorLiteral(red: 0.1764705926, green: 0.4980392158, blue: 0.7568627596, alpha: 0.5)
+        Messages.loadMessagesFromFIR { _ in
+            self.configureTableView()
+            let indexPath = IndexPath(row: Messages.array.count - 1, section: 0)
+            self.tableView.insertRows(at: [indexPath], with: .automatic)
+        }
+        
+        tableView.delegate    = self
+        tableView.dataSource  = self
+        
+        self.title = "Main chat"
+        
+        configureTableView()
+        
+        tableView.register(UINib(nibName: "IncomeMessageCell", bundle: nil), forCellReuseIdentifier: "IncomeMessageCell")
+        tableView.register(UINib(nibName: "OutcomeMessageCell", bundle: nil), forCellReuseIdentifier: "OutcomeMessageCell")
     }
     
-    cell.textLabel?.text = messages[indexPath.row].text
-    cell.detailTextLabel?.text = messages[indexPath.row].name
+    // MARK: - Handlers
+    
+    @IBAction func sendButtonPressed(_ sender: UIButton) {
+        //TODO: - send button is only available when inputText is not empty
+        guard let messageBody = textInput.text else {return}
+        Message.send(messageBody)
+        textInput.text = ""
+    }
+}
 
-    return cell
-  }
+//MARK: - TableView Delegate ans DataSource Methods
+
+extension ChatScreen: UITableViewDelegate, UITableViewDataSource {
+    
+    func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
+        return Messages.array.count
+    }
+    
+    func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
+        
+        //TODO: - After Auth will be available change hardcoded "igor" to something like Auth.auth().currentUser?.email
+        
+        //TODO: - We can define two more additional cells for state where above messages present without avatar
+        
+        if Messages.array[indexPath.row].senderId != "igor" {
+            let cell = tableView.dequeueReusableCell(withIdentifier: "IncomeMessageCell", for: indexPath) as! IncomeMessageCell
+            cell.configureCellWith(Messages.array[indexPath.row])
+            return cell
+        } else if Messages.array[indexPath.row].senderId == "igor" {
+            let cell = tableView.dequeueReusableCell(withIdentifier: "OutcomeMessageCell", for: indexPath) as! OutcomeMessageCell
+            cell.configureCellWith(Messages.array[indexPath.row])
+            return cell
+        } else {
+            let cell = UITableViewCell()
+            return cell
+        }
+    }
+    
+    func configureTableView() {
+        tableView.rowHeight = UITableView.automaticDimension
+        tableView.estimatedRowHeight = 37.0
+    }
 }

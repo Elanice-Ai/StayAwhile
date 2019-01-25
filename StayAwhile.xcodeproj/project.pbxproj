@@ -18,6 +18,13 @@
 		BFBD6E1C21F8BCD200454534 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = BFBD6E1B21F8BCD200454534 /* Assets.xcassets */; };
 		BFBD6E1F21F8BCD200454534 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = BFBD6E1D21F8BCD200454534 /* LaunchScreen.storyboard */; };
 		BFFB908D21F9CF37005D97D6 /* ChatScreen.swift in Sources */ = {isa = PBXBuildFile; fileRef = BFFB908C21F9CF37005D97D6 /* ChatScreen.swift */; };
+		FA0D36FE21FA3E750024F524 /* IncomeMessageCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = FA0D36FC21FA3E750024F524 /* IncomeMessageCell.xib */; };
+		FA0D36FF21FA3E750024F524 /* IncomeMessageCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = FA0D36FD21FA3E750024F524 /* IncomeMessageCell.swift */; };
+		FA9667A621FA4F0E008430C1 /* OutcomeMessageCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = FA9667A421FA4F0E008430C1 /* OutcomeMessageCell.xib */; };
+		FA9667A821FAD853008430C1 /* OutcomeMessageCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = FA9667A721FAD853008430C1 /* OutcomeMessageCell.swift */; };
+		FA9667AD21FAF272008430C1 /* Messages.swift in Sources */ = {isa = PBXBuildFile; fileRef = FA9667AC21FAF272008430C1 /* Messages.swift */; };
+		FA9667AF21FAF6EA008430C1 /* StartViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = FA9667AE21FAF6EA008430C1 /* StartViewController.swift */; };
+		FA9667B121FAF8DE008430C1 /* AuthorizationViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = FA9667B021FAF8DE008430C1 /* AuthorizationViewController.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -36,6 +43,13 @@
 		BFFB908C21F9CF37005D97D6 /* ChatScreen.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ChatScreen.swift; sourceTree = "<group>"; };
 		D4B77D50472E65387B8CA9A2 /* Pods_StayAwhile.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_StayAwhile.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		DF064487998D693A31BCD632 /* Pods-StayAwhile.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-StayAwhile.debug.xcconfig"; path = "Target Support Files/Pods-StayAwhile/Pods-StayAwhile.debug.xcconfig"; sourceTree = "<group>"; };
+		FA0D36FC21FA3E750024F524 /* IncomeMessageCell.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = IncomeMessageCell.xib; sourceTree = "<group>"; };
+		FA0D36FD21FA3E750024F524 /* IncomeMessageCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = IncomeMessageCell.swift; sourceTree = "<group>"; };
+		FA9667A421FA4F0E008430C1 /* OutcomeMessageCell.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = OutcomeMessageCell.xib; sourceTree = "<group>"; };
+		FA9667A721FAD853008430C1 /* OutcomeMessageCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = OutcomeMessageCell.swift; sourceTree = "<group>"; };
+		FA9667AC21FAF272008430C1 /* Messages.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Messages.swift; sourceTree = "<group>"; };
+		FA9667AE21FAF6EA008430C1 /* StartViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; name = StartViewController.swift; path = StayAwhile/Model/StartViewController.swift; sourceTree = SOURCE_ROOT; };
+		FA9667B021FAF8DE008430C1 /* AuthorizationViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; name = AuthorizationViewController.swift; path = StayAwhile/Model/AuthorizationViewController.swift; sourceTree = SOURCE_ROOT; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -111,6 +125,8 @@
 		FA0D36ED21F9E8D40024F524 /* Controller */ = {
 			isa = PBXGroup;
 			children = (
+				FA9667AE21FAF6EA008430C1 /* StartViewController.swift */,
+				FA9667B021FAF8DE008430C1 /* AuthorizationViewController.swift */,
 			);
 			path = Controller;
 			sourceTree = "<group>";
@@ -120,6 +136,8 @@
 			children = (
 				BFBD6E1621F8BCD100454534 /* OldVersion.swift */,
 				BFFB908C21F9CF37005D97D6 /* ChatScreen.swift */,
+				FA9667A921FADA4B008430C1 /* OutcomeMessageCell */,
+				FA0D370021FA44010024F524 /* IncomeMessageCell */,
 			);
 			path = View;
 			sourceTree = "<group>";
@@ -129,6 +147,7 @@
 			children = (
 				BF754F3D21F8C30D000BB110 /* Constants.swift */,
 				BFA9BA2B21F9FAC000D7B8B2 /* Message.swift */,
+				FA9667AC21FAF272008430C1 /* Messages.swift */,
 			);
 			path = Model;
 			sourceTree = "<group>";
@@ -141,6 +160,24 @@
 				BFA9BA2621F9EF9600D7B8B2 /* UITextField+Extensions.swift */,
 			);
 			path = Utils;
+			sourceTree = "<group>";
+		};
+		FA0D370021FA44010024F524 /* IncomeMessageCell */ = {
+			isa = PBXGroup;
+			children = (
+				FA0D36FD21FA3E750024F524 /* IncomeMessageCell.swift */,
+				FA0D36FC21FA3E750024F524 /* IncomeMessageCell.xib */,
+			);
+			path = IncomeMessageCell;
+			sourceTree = "<group>";
+		};
+		FA9667A921FADA4B008430C1 /* OutcomeMessageCell */ = {
+			isa = PBXGroup;
+			children = (
+				FA9667A721FAD853008430C1 /* OutcomeMessageCell.swift */,
+				FA9667A421FA4F0E008430C1 /* OutcomeMessageCell.xib */,
+			);
+			path = OutcomeMessageCell;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -203,10 +240,12 @@
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				FA0D36FE21FA3E750024F524 /* IncomeMessageCell.xib in Resources */,
 				BFBD6E1F21F8BCD200454534 /* LaunchScreen.storyboard in Resources */,
 				BFA9BA2921F9F08000D7B8B2 /* GoogleService-Info.plist in Resources */,
 				BFBD6E1C21F8BCD200454534 /* Assets.xcassets in Resources */,
 				BFBD6E1A21F8BCD100454534 /* Main.storyboard in Resources */,
+				FA9667A621FA4F0E008430C1 /* OutcomeMessageCell.xib in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -272,9 +311,14 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				FA9667B121FAF8DE008430C1 /* AuthorizationViewController.swift in Sources */,
 				BFBD6E1721F8BCD100454534 /* OldVersion.swift in Sources */,
+				FA9667AD21FAF272008430C1 /* Messages.swift in Sources */,
+				FA0D36FF21FA3E750024F524 /* IncomeMessageCell.swift in Sources */,
 				BFFB908D21F9CF37005D97D6 /* ChatScreen.swift in Sources */,
 				BFA9BA2721F9EF9600D7B8B2 /* UITextField+Extensions.swift in Sources */,
+				FA9667AF21FAF6EA008430C1 /* StartViewController.swift in Sources */,
+				FA9667A821FAD853008430C1 /* OutcomeMessageCell.swift in Sources */,
 				BFA9BA2C21F9FAC000D7B8B2 /* Message.swift in Sources */,
 				BFBD6E1521F8BCD100454534 /* AppDelegate.swift in Sources */,
 				BF754F3E21F8C30D000BB110 /* Constants.swift in Sources */,
